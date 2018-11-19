@@ -1,0 +1,4 @@
+c:\DotNetProjects\Epam.Task1.Square\Epam.Task1.Square\bin\Debug\Epam.Task1.Square.exe
+c:\DotNetProjects\Epam.Task1.Square\Epam.Task1.Square\bin\Debug\Epam.Task1.Square.pdb
+c:\DotNetProjects\Epam.Task1.Square\Epam.Task1.Square\obj\x86\Debug\Epam.Task1.Square.exe
+c:\DotNetProjects\Epam.Task1.Square\Epam.Task1.Square\obj\x86\Debug\Epam.Task1.Square.pdb
