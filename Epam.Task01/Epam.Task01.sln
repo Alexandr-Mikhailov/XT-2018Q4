@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task01.Another triangl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task01.X-masTree", "Epam.Task01.X-masTree\Epam.Task01.X-masTree.csproj", "{8FA7F466-EB30-4E30-8D22-A8278F826583}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task01.SumOfNumbers", "Epam.Task01.SumOfNumbers\Epam.Task01.SumOfNumbers.csproj", "{05A2FD8E-9D66-4AC3-8DB0-78716E289403}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -31,6 +33,10 @@ Global
 		{8FA7F466-EB30-4E30-8D22-A8278F826583}.Debug|x86.Build.0 = Debug|x86
 		{8FA7F466-EB30-4E30-8D22-A8278F826583}.Release|x86.ActiveCfg = Release|x86
 		{8FA7F466-EB30-4E30-8D22-A8278F826583}.Release|x86.Build.0 = Release|x86
+		{05A2FD8E-9D66-4AC3-8DB0-78716E289403}.Debug|x86.ActiveCfg = Debug|x86
+		{05A2FD8E-9D66-4AC3-8DB0-78716E289403}.Debug|x86.Build.0 = Debug|x86
+		{05A2FD8E-9D66-4AC3-8DB0-78716E289403}.Release|x86.ActiveCfg = Release|x86
+		{05A2FD8E-9D66-4AC3-8DB0-78716E289403}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
