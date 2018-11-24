@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task01.Rectangle", "Ep
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task01.Triangle", "Epam.Task01.Triangle\Epam.Task01.Triangle.csproj", "{E4025C30-60F7-44A3-977D-2D80E5D5EB5D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task01.Another triangle", "Epam.Task01.Another triangle\Epam.Task01.Another triangle.csproj", "{93C84E4A-6C8D-4620-AAAC-0DDA6E8AFC68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,6 +21,10 @@ Global
 		{E4025C30-60F7-44A3-977D-2D80E5D5EB5D}.Debug|x86.Build.0 = Debug|x86
 		{E4025C30-60F7-44A3-977D-2D80E5D5EB5D}.Release|x86.ActiveCfg = Release|x86
 		{E4025C30-60F7-44A3-977D-2D80E5D5EB5D}.Release|x86.Build.0 = Release|x86
+		{93C84E4A-6C8D-4620-AAAC-0DDA6E8AFC68}.Debug|x86.ActiveCfg = Debug|x86
+		{93C84E4A-6C8D-4620-AAAC-0DDA6E8AFC68}.Debug|x86.Build.0 = Debug|x86
+		{93C84E4A-6C8D-4620-AAAC-0DDA6E8AFC68}.Release|x86.ActiveCfg = Release|x86
+		{93C84E4A-6C8D-4620-AAAC-0DDA6E8AFC68}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
