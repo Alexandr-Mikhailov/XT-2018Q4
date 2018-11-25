@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task01.SumOfNumbers", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task01.FontAdjustment", "Epam.Task01.FontAdjustment\Epam.Task01.FontAdjustment.csproj", "{6F1F289E-E76C-456C-880E-D4658644293F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task01.ArrayProcessing", "Epam.Task01.ArrayProcessing\Epam.Task01.ArrayProcessing.csproj", "{EB7FDA36-34F0-41A4-AAE9-60A8708139A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -43,6 +45,10 @@ Global
 		{6F1F289E-E76C-456C-880E-D4658644293F}.Debug|x86.Build.0 = Debug|x86
 		{6F1F289E-E76C-456C-880E-D4658644293F}.Release|x86.ActiveCfg = Release|x86
 		{6F1F289E-E76C-456C-880E-D4658644293F}.Release|x86.Build.0 = Release|x86
+		{EB7FDA36-34F0-41A4-AAE9-60A8708139A8}.Debug|x86.ActiveCfg = Debug|x86
+		{EB7FDA36-34F0-41A4-AAE9-60A8708139A8}.Debug|x86.Build.0 = Debug|x86
+		{EB7FDA36-34F0-41A4-AAE9-60A8708139A8}.Release|x86.ActiveCfg = Release|x86
+		{EB7FDA36-34F0-41A4-AAE9-60A8708139A8}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
