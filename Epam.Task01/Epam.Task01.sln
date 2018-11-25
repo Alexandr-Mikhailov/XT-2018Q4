@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task01.NonNegativeSum"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task01.2DArray", "Epam.Task01.2DArray\Epam.Task01.2DArray.csproj", "{65F8989E-FB2A-4367-B213-3CA49DED7769}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task01.AverageStringLength", "Epam.Task01.AverageStringLength\Epam.Task01.AverageStringLength.csproj", "{F6BBD891-A7A9-46CB-B8D4-69712BCF54C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -67,6 +69,10 @@ Global
 		{65F8989E-FB2A-4367-B213-3CA49DED7769}.Debug|x86.Build.0 = Debug|x86
 		{65F8989E-FB2A-4367-B213-3CA49DED7769}.Release|x86.ActiveCfg = Release|x86
 		{65F8989E-FB2A-4367-B213-3CA49DED7769}.Release|x86.Build.0 = Release|x86
+		{F6BBD891-A7A9-46CB-B8D4-69712BCF54C5}.Debug|x86.ActiveCfg = Debug|x86
+		{F6BBD891-A7A9-46CB-B8D4-69712BCF54C5}.Debug|x86.Build.0 = Debug|x86
+		{F6BBD891-A7A9-46CB-B8D4-69712BCF54C5}.Release|x86.ActiveCfg = Release|x86
+		{F6BBD891-A7A9-46CB-B8D4-69712BCF54C5}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
