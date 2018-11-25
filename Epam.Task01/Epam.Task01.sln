@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task01.ArrayProcessing
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task01.NoPositive", "Epam.Task01.NoPositive\Epam.Task01.NoPositive.csproj", "{C7D67056-1898-4755-8626-5C9EBEDA4101}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task01.NonNegativeSum", "Epam.Task01.NonNegativeSum\Epam.Task01.NonNegativeSum.csproj", "{D96CA9B4-018E-4073-9646-872A0E0BD4D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -55,6 +57,10 @@ Global
 		{C7D67056-1898-4755-8626-5C9EBEDA4101}.Debug|x86.Build.0 = Debug|x86
 		{C7D67056-1898-4755-8626-5C9EBEDA4101}.Release|x86.ActiveCfg = Release|x86
 		{C7D67056-1898-4755-8626-5C9EBEDA4101}.Release|x86.Build.0 = Release|x86
+		{D96CA9B4-018E-4073-9646-872A0E0BD4D1}.Debug|x86.ActiveCfg = Debug|x86
+		{D96CA9B4-018E-4073-9646-872A0E0BD4D1}.Debug|x86.Build.0 = Debug|x86
+		{D96CA9B4-018E-4073-9646-872A0E0BD4D1}.Release|x86.ActiveCfg = Release|x86
+		{D96CA9B4-018E-4073-9646-872A0E0BD4D1}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
