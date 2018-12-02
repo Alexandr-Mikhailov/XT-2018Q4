@@ -10,13 +10,12 @@ namespace Epam.Task02.Round
     {
         public static void Main(string[] args)
         {
-            double x, y, r;
             string input;
 
             Console.WriteLine("Input x coordinate of the round");
             input = Console.ReadLine();
 
-            if (!(double.TryParse(input, out x)))
+            if (!double.TryParse(input, out double x))
             {
                 Console.WriteLine("Coordinate x mast be a number");
             }
@@ -25,7 +24,7 @@ namespace Epam.Task02.Round
                 Console.WriteLine("Input y coordinate of the round");
                 input = Console.ReadLine();
 
-                if (!(double.TryParse(input, out y)))
+                if (!double.TryParse(input, out double y))
                 {
                     Console.WriteLine("Coordinate y mast be a number");
                 }
@@ -34,7 +33,7 @@ namespace Epam.Task02.Round
                     Console.WriteLine("Input radius of the round");
                     input = Console.ReadLine();
 
-                    if (!(double.TryParse(input, out r)))
+                    if (!double.TryParse(input, out double r))
                     {
                         Console.WriteLine("Radus mast be a number");
                     }
