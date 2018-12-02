@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Epam.Task02.Round
+namespace Epam.Task02.Triangle
 {
     public class Program
     {
@@ -12,40 +12,40 @@ namespace Epam.Task02.Round
         {
             string input;
 
-            Console.WriteLine("Input x coordinate of the circle");
+            Console.WriteLine("Input first side of the triangle");
             input = Console.ReadLine();
 
             if (!double.TryParse(input, out double x))
             {
-                Console.WriteLine("Coordinate x mast be a number");
+                Console.WriteLine("Side mast be a number");
             }
             else
             {
-                Console.WriteLine("Input y coordinate of the circle");
+                Console.WriteLine("Input second side of the triangle");
                 input = Console.ReadLine();
 
                 if (!double.TryParse(input, out double y))
                 {
-                    Console.WriteLine("Coordinate y mast be a number");
+                    Console.WriteLine("Side mast be a number");
                 }
                 else
                 {
-                    Console.WriteLine("Input radius of the circle");
+                    Console.WriteLine("Input third side of the triangle");
                     input = Console.ReadLine();
 
-                    if (!double.TryParse(input, out double r))
+                    if (!double.TryParse(input, out double z))
                     {
-                        Console.WriteLine("Radus mast be a number");
+                        Console.WriteLine("Side mast be a number");
                     }
                     else
                     {
-                        Round round = new Round();
+                        Triangle triangle = new Triangle();
 
                         try
                         {
-                            round.NewRound(x, y, r);
-                            Console.WriteLine("Length of circumference is {0}", round.GetCircleLength());
-                            Console.WriteLine("Area of the circle is {0}", round.GetArea());
+                            triangle.NewTriangle(x, y, z);
+                            Console.WriteLine("Triangle perimeter is {0}",triangle.GetPerimeter());
+                            Console.WriteLine("Triangle area is {0}", triangle.GetArea());
                         }
                         catch (Exception ex)
                         {
