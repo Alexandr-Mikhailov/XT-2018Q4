@@ -1,4 +1,0 @@
-c:\DotNetProjects\Epam.Task1.CheckSimplicity\Epam.Task1.CheckSimplicity\bin\Debug\Epam.Task1.CheckSimplicity.exe
-c:\DotNetProjects\Epam.Task1.CheckSimplicity\Epam.Task1.CheckSimplicity\bin\Debug\Epam.Task1.CheckSimplicity.pdb
-c:\DotNetProjects\Epam.Task1.CheckSimplicity\Epam.Task1.CheckSimplicity\obj\x86\Debug\Epam.Task1.CheckSimplicity.exe
-c:\DotNetProjects\Epam.Task1.CheckSimplicity\Epam.Task1.CheckSimplicity\obj\x86\Debug\Epam.Task1.CheckSimplicity.pdb

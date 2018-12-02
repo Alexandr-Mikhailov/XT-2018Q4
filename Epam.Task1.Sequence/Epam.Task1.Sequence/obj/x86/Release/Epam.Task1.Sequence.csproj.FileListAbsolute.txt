@@ -1,4 +1,0 @@
-c:\DotNetProjects\Epam.Task1.Sequence\Epam.Task1.Sequence\bin\Release\Epam.Task1.Sequence.exe
-c:\DotNetProjects\Epam.Task1.Sequence\Epam.Task1.Sequence\bin\Release\Epam.Task1.Sequence.pdb
-c:\DotNetProjects\Epam.Task1.Sequence\Epam.Task1.Sequence\obj\x86\Release\Epam.Task1.Sequence.exe
-c:\DotNetProjects\Epam.Task1.Sequence\Epam.Task1.Sequence\obj\x86\Release\Epam.Task1.Sequence.pdb
