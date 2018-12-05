@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02.Employee", "Epa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02.User_", "Epam.Task02.User_\Epam.Task02.User_.csproj", "{AB661146-DB9A-465B-9B81-4FF73CC69521}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02.MyString", "Epam.Task02.MyString\Epam.Task02.MyString.csproj", "{96089E98-E51E-4D88-B7F4-1F611D0732F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{AB661146-DB9A-465B-9B81-4FF73CC69521}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB661146-DB9A-465B-9B81-4FF73CC69521}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB661146-DB9A-465B-9B81-4FF73CC69521}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96089E98-E51E-4D88-B7F4-1F611D0732F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96089E98-E51E-4D88-B7F4-1F611D0732F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96089E98-E51E-4D88-B7F4-1F611D0732F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96089E98-E51E-4D88-B7F4-1F611D0732F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
