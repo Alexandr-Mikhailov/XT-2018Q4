@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02.User_", "Epam.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02.MyString", "Epam.Task02.MyString\Epam.Task02.MyString.csproj", "{96089E98-E51E-4D88-B7F4-1F611D0732F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02.Ring", "Epam.Task02.Ring\Epam.Task02.Ring.csproj", "{F54D55F9-F791-483D-B4C7-71C36AB86A54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02.VectorGraphicsEditor", "Epam.Task02.VectorGraphicsEditor\Epam.Task02.VectorGraphicsEditor.csproj", "{B4434775-107B-4254-A960-099F123B267D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{96089E98-E51E-4D88-B7F4-1F611D0732F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96089E98-E51E-4D88-B7F4-1F611D0732F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96089E98-E51E-4D88-B7F4-1F611D0732F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F54D55F9-F791-483D-B4C7-71C36AB86A54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F54D55F9-F791-483D-B4C7-71C36AB86A54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F54D55F9-F791-483D-B4C7-71C36AB86A54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F54D55F9-F791-483D-B4C7-71C36AB86A54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4434775-107B-4254-A960-099F123B267D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4434775-107B-4254-A960-099F123B267D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4434775-107B-4254-A960-099F123B267D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4434775-107B-4254-A960-099F123B267D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
