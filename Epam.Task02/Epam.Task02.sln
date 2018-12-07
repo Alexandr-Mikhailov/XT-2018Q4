@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02.Round", "Epam.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02.Triangle", "Epam.Task02.Triangle\Epam.Task02.Triangle.csproj", "{5A59DC3B-AE9C-494A-B3C7-F4E6002FCA45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02.User", "Epam.Task02.User\Epam.Task02.User.csproj", "{BDE8EE0E-C824-44E3-B860-E638A4C667A8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02.Employee", "Epam.Task02.Employee\Epam.Task02.Employee.csproj", "{8AC9A0BC-BF0C-4E59-930E-56FC7035E0FE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task02.User_", "Epam.Task02.User_\Epam.Task02.User_.csproj", "{AB661146-DB9A-465B-9B81-4FF73CC69521}"
@@ -35,10 +33,6 @@ Global
 		{5A59DC3B-AE9C-494A-B3C7-F4E6002FCA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A59DC3B-AE9C-494A-B3C7-F4E6002FCA45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A59DC3B-AE9C-494A-B3C7-F4E6002FCA45}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BDE8EE0E-C824-44E3-B860-E638A4C667A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BDE8EE0E-C824-44E3-B860-E638A4C667A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BDE8EE0E-C824-44E3-B860-E638A4C667A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BDE8EE0E-C824-44E3-B860-E638A4C667A8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8AC9A0BC-BF0C-4E59-930E-56FC7035E0FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8AC9A0BC-BF0C-4E59-930E-56FC7035E0FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AC9A0BC-BF0C-4E59-930E-56FC7035E0FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
