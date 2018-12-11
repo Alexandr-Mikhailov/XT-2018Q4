@@ -11,6 +11,12 @@ namespace Epam.Task03.Dynamic_Array
         public static void Main(string[] args)
         {
             DynamicArray<int> arr = new DynamicArray<int>(3);
+            DynamicArray<string> arr_string = new DynamicArray<string>(3);
+
+            for (int i = 0; i < 7; i++)
+            {
+                arr_string.Add($"string{i}");
+            }
 
             for (int i = 0; i < 10; i++)
             {
@@ -24,15 +30,33 @@ namespace Epam.Task03.Dynamic_Array
 
             foreach (var item in arr)
             {
-                Console.WriteLine(item);
+                Console.Write($"{item} ");
             }
 
-            bool a = arr.Remove(9);
-            a = arr.Remove(3);
+            Console.WriteLine();
 
+            bool a = arr.Remove(3);
+            a = arr_string.Remove("string4");
+            
             foreach (var item in arr)
             {
-                Console.WriteLine(item);
+                Console.Write($"{item} ");
+            }
+
+            Console.WriteLine();
+
+            foreach (var item in arr_string)
+            {
+                Console.Write($"{item} ");
+            }
+
+            Console.WriteLine();
+
+            a = arr_string.Insert(2, "string_");
+
+            foreach (var item in arr_string)
+            {
+                Console.Write($"{item} ");
             }
         }
     }

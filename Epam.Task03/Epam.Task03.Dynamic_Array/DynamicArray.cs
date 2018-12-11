@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace Epam.Task03.Dynamic_Array
 {
-    public class DynamicArray<T>
+    public class DynamicArray<T> : IEnumerable, IEnumerable<T>
     {
         private const int Cap = 8;
         private int count = 0;
-        private int position = -1;
 
         public DynamicArray() : this(Cap)
         {
@@ -49,19 +48,6 @@ namespace Epam.Task03.Dynamic_Array
             get
             {
                 return this.count;
-            }
-        }
-
-        public object Current
-        {
-            get
-            {
-                if (this.position == -1 || this.position >= this.MyLength)
-                {
-                    throw new InvalidOperationException();
-                }
-
-                return this.Arr[this.position];
             }
         }
 
@@ -169,7 +155,7 @@ namespace Epam.Task03.Dynamic_Array
                         this.Arr = temp;
                     }
 
-                    for (int i = index; i < this.MyLength - 1; i++)
+                    for (int i = this.MyLength - 1; i >= index; i--)
                     {
                         this.Arr[i + 1] = this.Arr[i];
                     }
@@ -244,32 +230,17 @@ namespace Epam.Task03.Dynamic_Array
             return false;
         }
 
-        public bool MoveNext()
+        public IEnumerator GetEnumerator()
         {
-            if (this.position < this.MyLength - 1)
+            for (int i = 0; i < this.MyLength; i++)
             {
-                this.position++;
-                return true;
-            }
-            else
-            {
-                return false;
+                yield return this.Arr[i];
             }
         }
 
-        public void Reset()
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
         {
-            this.position = -1;
+            return ((IEnumerable<T>)this.Arr).GetEnumerator();
         }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return this.Arr.GetEnumerator();
-        }
-    }
-
-    public class MyEnumerator : IEnumerable // , IEnumerable<T>
-    {
-
     }
 }
