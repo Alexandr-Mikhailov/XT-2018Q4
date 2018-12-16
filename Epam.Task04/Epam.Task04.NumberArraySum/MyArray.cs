@@ -71,7 +71,7 @@ namespace Epam.Task04.NumberArraySum
 
             for (int i = 0; i < this.Arr.Length; i++)
             {
-                sum = sum + Arr[i];
+                sum = sum + this.Arr[i];
             }
 
             return sum;

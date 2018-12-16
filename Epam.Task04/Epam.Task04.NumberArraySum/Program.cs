@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Epam.Task04.NumberArraySum
 {
-    class Program
+    public class Program
     {
-        const int N = 8;
+        private const int N = 8;
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             MyArray array = new MyArray(N);
 
