@@ -209,6 +209,7 @@ namespace Epam.Task04.ToIntOrNotToInt
                                 zero_count++;
                             }
                         }
+
                         if (zero_count == temp.Length - temp.IndexOf(Comma) - 1)
                         {
                             return true;
@@ -252,6 +253,7 @@ namespace Epam.Task04.ToIntOrNotToInt
                                         zero_count++;
                                     }
                                 }
+
                                 if (pow > zero_count)
                                 {
                                     return false;
