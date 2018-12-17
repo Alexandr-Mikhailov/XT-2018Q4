@@ -46,63 +46,33 @@ namespace Epam.Task04.CustomSort
 
             Console.WriteLine("Unsorted int array");
 
-            foreach (var item in int_array)
-            {
-                Console.Write($"{item} ");
-            }
-
-            Console.WriteLine();
+            Display(int_array);
 
             Console.WriteLine("Sorted int array");
 
             Sorting(int_array, CompareInt);
 
-            foreach (var item in int_array)
-            {
-                Console.Write($"{item} ");
-            }
-
-            Console.WriteLine();
+            Display(int_array);
 
             Console.WriteLine("Unsorted double array");
 
-            foreach (var item in double_array)
-            {
-                Console.Write($"{item} ");
-            }
-
-            Console.WriteLine();
+            Display(double_array);
 
             Console.WriteLine("Sorted double array");
 
             Sorting(double_array, CompareDouble);
 
-            foreach (var item in double_array)
-            {
-                Console.Write($"{item} ");
-            }
-
-            Console.WriteLine();
+            Display(double_array);
 
             Console.WriteLine("Unsorted char array");
 
-            foreach (var item in char_array)
-            {
-                Console.Write($"{item} ");
-            }
-
-            Console.WriteLine();
+            Display(char_array);
 
             Console.WriteLine("Sorted char array");
 
             Sorting(char_array, CompareChar);
 
-            foreach (var item in char_array)
-            {
-                Console.Write($"{item} ");
-            }
-
-            Console.WriteLine();
+            Display(char_array);
         }
 
         public static int CompareInt(int a, int b)
@@ -160,6 +130,16 @@ namespace Epam.Task04.CustomSort
                     return -1;
                 }
             }
+        }
+
+        public static void Display<T>(T[] arr)
+        {
+            foreach (var item in arr)
+            {
+                Console.Write($"{item} ");
+            }
+
+            Console.WriteLine();
         }
     }
 }
