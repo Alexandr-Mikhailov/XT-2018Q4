@@ -344,7 +344,7 @@ namespace Epam.Task05.BackUpSystem
                     }
                     else if (time >= fileTime)
                     {
-                        if (filename[4] == "R")
+                        if (filename.Length > 4 && filename[4] == "R")
                         {
                             int i = 4;
                             DateTime renamedTime;
