@@ -54,13 +54,14 @@ namespace Epam.Task05.BackUpSystem
                     }
                 }
 
+                SaveFiles(Directory.GetCurrentDirectory());
+
                 watch.Created += new FileSystemEventHandler(FileCreated);
                 watch.Deleted += new FileSystemEventHandler(FileDeleted);
                 watch.Renamed += new RenamedEventHandler(FileRenamed);
 
                 watch.EnableRaisingEvents = true;
 
-                SaveFiles(Directory.GetCurrentDirectory());
                 do
                 {
                     Console.WriteLine("Print e for exit");
@@ -148,13 +149,50 @@ namespace Epam.Task05.BackUpSystem
         public static void FileDeleted(object sender, FileSystemEventArgs e)
         {
             string fullNameLogFile = Directory.GetCurrentDirectory() + "\\" + "Backup" + "\\" + LogFile;
+            string curDir = Directory.GetCurrentDirectory();
+
+            FileInfo file = new FileInfo(e.FullPath);
 
             try
             {
                 using (StreamWriter log = new StreamWriter(fullNameLogFile, true))
                 {
-                    //log.Write("D|{0}|{1}|{2}", DateTime.Now, e.Name, e.FullPath);
-                    //log.WriteLine();
+                    bool fileInIds = false;
+
+                    IEnumerable<string> textFileIDs = Directory.EnumerateFiles(curDir + "\\" + "Backup", BAKFilter);
+
+                    foreach (string currentId in textFileIDs)
+                    {
+                        FileInfo fileId = new FileInfo(currentId);
+
+                        if (IsEqual(file.FullName, fileId.FullName))
+                        {
+                            fileInIds = true;
+                            log.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}", file.Name, file.CreationTime.ToString(), file.FullName, fileId.FullName, "D", DateTime.Now.ToString());
+                            break;
+                        }
+                    }
+
+                    if (!fileInIds)
+                    {
+                        FileInfo fileIdLastOld = new FileInfo(textFileIDs.Last());
+
+                        if (int.TryParse(fileIdLastOld.Name.Remove(fileIdLastOld.Name.Length - 4), out int fileIdLast))
+                        {
+                            fileIdLast++;
+                            string fileIdNew = fileIdLast.ToString() + BAKextension;
+
+                            file.CopyTo(curDir + "\\" + "Backup" + "\\" + fileIdNew);
+
+                            FileInfo fileId = new FileInfo(curDir + "\\" + "Backup" + "\\" + fileIdNew);
+
+                            log.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}", file.Name, file.CreationTime.ToString(), file.FullName, fileId.FullName, "D", DateTime.Now.ToString());
+                        }
+                        else
+                        {
+                            Console.WriteLine($"File ID {textFileIDs.Last()} name error");
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -166,13 +204,50 @@ namespace Epam.Task05.BackUpSystem
         public static void FileRenamed(object sender, RenamedEventArgs e)
         {
             string fullNameLogFile = Directory.GetCurrentDirectory() + "\\" + "Backup" + "\\" + LogFile;
+            string curDir = Directory.GetCurrentDirectory();
+
+            FileInfo file = new FileInfo(e.FullPath);
 
             try
             {
                 using (StreamWriter log = new StreamWriter(fullNameLogFile, true))
                 {
-                    //log.Write("R|{0}|{1}|{2}|{3}|{4}", DateTime.Now, e.OldName, e.OldFullPath, e.Name, e.FullPath);
-                    //log.WriteLine();
+                    bool fileInIds = false;
+
+                    IEnumerable<string> textFileIDs = Directory.EnumerateFiles(curDir + "\\" + "Backup", BAKFilter);
+
+                    foreach (string currentId in textFileIDs)
+                    {
+                        FileInfo fileId = new FileInfo(currentId);
+
+                        if (IsEqual(file.FullName, fileId.FullName))
+                        {
+                            fileInIds = true;
+                            log.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}", e.OldName, file.CreationTime.ToString(), e.OldFullPath, fileId.FullName, "R", file.FullName, DateTime.Now.ToString());
+                            break;
+                        }
+                    }
+
+                    if (!fileInIds)
+                    {
+                        FileInfo fileIdLastOld = new FileInfo(textFileIDs.Last());
+
+                        if (int.TryParse(fileIdLastOld.Name.Remove(fileIdLastOld.Name.Length - 4), out int fileIdLast))
+                        {
+                            fileIdLast++;
+                            string fileIdNew = fileIdLast.ToString() + BAKextension;
+
+                            file.CopyTo(curDir + "\\" + "Backup" + "\\" + fileIdNew);
+
+                            FileInfo fileId = new FileInfo(curDir + "\\" + "Backup" + "\\" + fileIdNew);
+
+                            log.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}", e.OldName, file.CreationTime.ToString(), e.OldFullPath, fileId.FullName, "R", file.FullName, DateTime.Now.ToString());
+                        }
+                        else
+                        {
+                            Console.WriteLine($"File ID {textFileIDs.Last()} name error");
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -202,7 +277,7 @@ namespace Epam.Task05.BackUpSystem
                 {
                     foreach (string currentFile in textFiles)
                     {
-                        bool fileInIds = false;
+                        bool fileInIDs = false;
 
                         FileInfo fileInDir = new FileInfo(currentFile);
 
@@ -214,13 +289,13 @@ namespace Epam.Task05.BackUpSystem
 
                             if (IsEqual(fileInDir.FullName, fileId.FullName))
                             {
-                                fileInIds = true;
+                                fileInIDs = true;
                                 log.WriteLine("{0}|{1}|{2}|{3}", fileInDir.Name, fileInDir.CreationTime.ToString(), fileInDir.FullName, fileId.FullName);
                                 break;
                             }
                         }
 
-                        if (!fileInIds)
+                        if (!fileInIDs)
                         {
                             FileInfo fileIdLastOld = new FileInfo(textFileIDs.Last());
 
@@ -282,6 +357,9 @@ namespace Epam.Task05.BackUpSystem
                                         FileInfo restored = new FileInfo(filename[3]);
 
                                         restored.CopyTo(filename[i + 1]);
+
+                                        File.SetCreationTime(filename[i + 1], fileTime);
+                                        File.SetLastWriteTime(filename[i + 1], fileTime);
                                     }
                                 }
                                 else
@@ -299,7 +377,8 @@ namespace Epam.Task05.BackUpSystem
 
                             restored.CopyTo(filename[2]);
 
-
+                            File.SetCreationTime(filename[2], fileTime);
+                            File.SetLastWriteTime(filename[2], fileTime);
                         }
                     }
                 }
@@ -330,7 +409,5 @@ namespace Epam.Task05.BackUpSystem
                 return false;
             }
         }
-
-        //public static OpenLog(dir)
     }
 }
