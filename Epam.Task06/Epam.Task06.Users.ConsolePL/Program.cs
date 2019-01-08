@@ -1,11 +1,11 @@
-﻿using Epam.Task06.Users.BLL.Interface;
-using Epam.Task06.Users.Common;
-using Epam.Task06.Users.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Epam.Task06.Users.BLL.Interface;
+using Epam.Task06.Users.Common;
+using Epam.Task06.Users.Entities;
 
 namespace Epam.Task06.Users.ConsolePL
 {
@@ -22,19 +22,86 @@ namespace Epam.Task06.Users.ConsolePL
             {
                 input = Console.ReadLine();
 
+                switch (input)
+                {
+                    case "1":
+                        {
+                            AddUser(userLogic);
+                            break;
+                        }
+
+                    case "2":
+                        {
+                            DeleteUser(userLogic);
+                            break;
+                        }
+
+                    case "3":
+                        {
+                            ShowUsers(userLogic);
+                            break;
+                        }
+
+                    case "4":
+                        {
+                            SaveUsers(userLogic);
+                            break;
+                        }
+
+                    default: break;
+                }
             }
-            while (input != "q");
+            while (input.ToLower() != "q");
+
+            SaveUsers(userLogic);
         }
 
         private static void AddUser(IUserLogic userLogic)
         {
-            var user = new User
-            {
-                Name = "John",
-                DateOfBirth = DateTime.Now,
-            };
+            string input;
 
-            userLogic.Add(user);
+            Console.WriteLine("input user Name");
+            input = Console.ReadLine();
+
+            var user = new User();
+            user.Name = input;
+
+            Console.WriteLine("input user date of birth in format dd.mm.yyyy");
+            input = Console.ReadLine();
+
+            if (!DateTime.TryParse(input, out var datebirth) || datebirth > DateTime.Now)
+            {
+                Console.WriteLine("Date of birth is not correct");
+            }
+            else
+            {
+                user.DateOfBirth = datebirth;
+
+                userLogic.Add(user);
+
+                Console.WriteLine("User added");
+                ShowMenu();
+            }
+        }
+
+        private static void DeleteUser(IUserLogic userLogic)
+        {
+            string input;
+            ShowUsers(userLogic);
+            Console.WriteLine("Choose user Id to delete");
+            input = Console.ReadLine();
+
+            if (!int.TryParse(input, out var id) || userLogic.GetById(id) == null)
+            {
+                Console.WriteLine("User Id is not correct");
+            }
+            else
+            {
+                userLogic.Delete(id);
+
+                Console.WriteLine("User deleted");
+                ShowMenu();
+            }
         }
 
         private static void ShowMenu()
@@ -49,16 +116,21 @@ namespace Epam.Task06.Users.ConsolePL
 
         private static void ShowUsers(IUserLogic userLogic)
         {
+            Console.WriteLine("ID Name Date of birth Age");
+
             foreach (var user in userLogic.GetAll())
             {
                 Console.WriteLine(user);
             }
+
             Console.WriteLine();
         }
 
         private static void SaveUsers(IUserLogic userLogic)
         {
             userLogic.SaveUsersList();
+
+            Console.WriteLine("User list saved");
         }
     }
 }

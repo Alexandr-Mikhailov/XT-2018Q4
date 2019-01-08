@@ -1,54 +1,54 @@
-﻿using Epam.Task06.Users.DAL.Interface;
-using Epam.Task06.Users.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Epam.Task06.Users.DAL.Interface;
+using Epam.Task06.Users.Entities;
 
 namespace Epam.Task06.Users.DAL
 {
     public class UserFakeDao : IUserDao
     {
-        private static readonly Dictionary<int, User> _repoUsers = new Dictionary<int, User>();
+        private static readonly Dictionary<int, User> RepoUsers = new Dictionary<int, User>();
 
         public void Add(User user)
         {
-            var lastId = _repoUsers.Any()
-                ? _repoUsers.Keys.Max()
+            var lastId = RepoUsers.Any()
+                ? RepoUsers.Keys.Max()
                 : 0;
 
             user.Id = ++lastId;
 
-            _repoUsers.Add(user.Id, user);
+            RepoUsers.Add(user.Id, user);
         }
 
         public bool Delete(int id)
         {
-            return _repoUsers.Remove(id);
+            return RepoUsers.Remove(id);
         }
 
         public bool Update(User user)
         {
-            if (!_repoUsers.ContainsKey(user.Id))
+            if (!RepoUsers.ContainsKey(user.Id))
             {
                 return false;
             }
 
-            _repoUsers[user.Id] = user;
+            RepoUsers[user.Id] = user;
             return true;
         }
 
         public User GetById(int id)
         {
-            return _repoUsers.TryGetValue(id, out var user)
+            return RepoUsers.TryGetValue(id, out var user)
                 ? user
                 : null;
         }
 
         public IEnumerable<User> GetAll()
         {
-            return _repoUsers.Values;
+            return RepoUsers.Values;
         }
 
         public void SaveUsersList()

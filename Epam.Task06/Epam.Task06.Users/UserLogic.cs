@@ -1,25 +1,25 @@
-﻿using Epam.Task06.Users.BLL.Interface;
-using Epam.Task06.Users.DAL.Interface;
-using Epam.Task06.Users.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Epam.Task06.Users.BLL.Interface;
+using Epam.Task06.Users.DAL.Interface;
+using Epam.Task06.Users.Entities;
 
 namespace Epam.Task06.Users.BLL
 {
-    public class UserLogic: IUserLogic
+    public class UserLogic : IUserLogic
     {
-        private const string ALL_USERS_CACHE_KEY = "GetAllUsers";
+        private const string AllUsersCacheKEY = "GetAllUsers";
 
-        private readonly IUserDao _userDao;
-        private readonly ICacheLogic _cacheLogic;
+        private readonly IUserDao userdao;
+        private readonly ICacheLogic cachelogic;
 
         public UserLogic(IUserDao userDao, ICacheLogic cacheLogic)
         {
-            _userDao = userDao;
-            _cacheLogic = cacheLogic;
+            this.userdao = userDao;
+            this.cachelogic = cacheLogic;
         }
 
         public void Add(User user)
@@ -36,33 +36,33 @@ namespace Epam.Task06.Users.BLL
                 throw;
             }
 
-            _cacheLogic.Delete(ALL_USERS_CACHE_KEY);
-            _userDao.Add(user);
+            this.cachelogic.Delete(AllUsersCacheKEY);
+            this.userdao.Add(user);
         }
 
         public void Delete(int id)
         {
-            _userDao.Delete(id);
+            this.userdao.Delete(id);
         }
 
         public void Update(User user)
         {
-            _userDao.Update(user);
+            this.userdao.Update(user);
         }
 
         public User GetById(int id)
         {
-            return _userDao.GetById(id);
+            return this.userdao.GetById(id);
         }
 
         public IEnumerable<User> GetAll()
         {
-            var cacheResult = _cacheLogic.Get<IEnumerable<User>>(ALL_USERS_CACHE_KEY);
+            var cacheResult = this.cachelogic.Get<IEnumerable<User>>(AllUsersCacheKEY);
 
             if (cacheResult == null)
             {
-                var result = _userDao.GetAll();
-                _cacheLogic.Add(ALL_USERS_CACHE_KEY, result);
+                var result = this.userdao.GetAll();
+                this.cachelogic.Add(AllUsersCacheKEY, result);
 
                 return result;
             }
@@ -72,7 +72,7 @@ namespace Epam.Task06.Users.BLL
 
         public void SaveUsersList()
         {
-            _userDao.SaveUsersList();
+            this.userdao.SaveUsersList();
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Epam.Task06.Users.Entities
         {
             get
             {
-                return DateTime.Now.Year - DateOfBirth.Year;
+                return DateTime.Now.Year - this.DateOfBirth.Year;
             }
         }
 

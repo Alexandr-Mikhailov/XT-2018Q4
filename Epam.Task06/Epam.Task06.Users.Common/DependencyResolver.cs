@@ -1,19 +1,21 @@
-﻿using Epam.Task06.Users.BLL;
-using Epam.Task06.Users.BLL.Interface;
-using Epam.Task06.Users.DAL;
-using Epam.Task06.Users.DAL.Interface;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Epam.Task06.Users.BLL;
+using Epam.Task06.Users.BLL.Interface;
+using Epam.Task06.Users.DAL;
+using Epam.Task06.Users.DAL.Interface;
 
 namespace Epam.Task06.Users.Common
 {
     public static class DependencyResolver
     {
-        private static IUserDao _userDao;
+        private static IUserDao userdao;
+        private static IUserLogic userlogic;
+        private static ICacheLogic cachelogic;
 
         public static IUserDao UserDao
         {
@@ -21,36 +23,33 @@ namespace Epam.Task06.Users.Common
             {
                 var key = ConfigurationManager.AppSettings["DaoUserKey"];
 
-                if(_userDao == null)
+                if (userdao == null)
                 {
                     switch (key.ToLower())
                     {
                         case "text":
                             {
-                                _userDao = new UserTextFileDao();
+                                userdao = new UserTextFileDao();
                                 break;
                             }
+
                         case "memory":
                             {
-                                _userDao = new UserFakeDao();
+                                userdao = new UserFakeDao();
                                 break;
                             }
+
                         default:
                             break;
                     }
                 }
 
-                
-                return _userDao;
+                return userdao;
             }
         }
 
-        private static IUserLogic _userLogic;
+        public static IUserLogic UserLogic => userlogic ?? (userlogic = new UserLogic(UserDao, CacheLogic));
 
-        public static IUserLogic UserLogic => _userLogic ?? (_userLogic = new UserLogic(UserDao, CacheLogic));
-
-        private static ICacheLogic _cacheLogic;
-
-        public static ICacheLogic CacheLogic => _cacheLogic ?? (_cacheLogic = new CacheLogic());
+        public static ICacheLogic CacheLogic => cachelogic ?? (cachelogic = new CacheLogic());
     }
 }
