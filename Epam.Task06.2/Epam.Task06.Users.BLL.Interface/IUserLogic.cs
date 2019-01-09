@@ -11,6 +11,8 @@ namespace Epam.Task06.Users.BLL.Interface
     {
         void Add(User user);
 
+        bool AddAward(User user, Award award);
+
         void Delete(int id);
 
         void Update(User user);
@@ -18,6 +20,8 @@ namespace Epam.Task06.Users.BLL.Interface
         User GetById(int id);
 
         IEnumerable<User> GetAll();
+
+        IEnumerable<Award> GetAllAwards(User user);
 
         void SaveUsersList();
     }

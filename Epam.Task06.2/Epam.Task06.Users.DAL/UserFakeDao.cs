@@ -55,5 +55,24 @@ namespace Epam.Task06.Users.DAL
         {
             Console.WriteLine("This is FakeDao, list can not be saved");
         }
+
+        public void AddAward(User user, Award award)
+        {
+            if (RepoUsers[user.Id].Awards.ContainsKey(award.Id))
+            {
+                throw new Exception($"User already has award {award.Id} {award.Title}");
+            }
+            else
+            {
+                RepoUsers[user.Id].Awards.Add(award.Id, award);
+            }
+        }
+
+        public IEnumerable<Award> GetAllAwards(User user)
+        {
+            {
+                return RepoUsers[user.Id].Awards.Values;
+            }
+        }
     }
 }

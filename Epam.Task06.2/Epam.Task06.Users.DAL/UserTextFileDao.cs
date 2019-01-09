@@ -83,9 +83,37 @@ namespace Epam.Task06.Users.DAL
                     sb.Append(Space);
                     sb.Append(item.Value.Age.ToString());
 
+                    if (item.Value.Awards != null)
+                    {
+                        foreach (var award in item.Value.Awards)
+                        {
+                            sb.Append(Space);
+                            sb.Append(award.Key);
+                            sb.Append(Space);
+                            sb.Append(award.Value.Title);
+                        }
+                    }
+
                     textFile.WriteLine(sb.ToString());
                 }
             }
+        }
+
+        public void AddAward(User user, Award award)
+        {
+            if (RepoUsers[user.Id].Awards.ContainsKey(award.Id))
+            {
+                throw new Exception($"User already has award {award.Id} {award.Title}");
+            }
+            else
+            {
+                RepoUsers[user.Id].Awards.Add(award.Id, award);
+            }
+        }
+
+        public IEnumerable<Award> GetAllAwards(User user)
+        {
+            return RepoUsers[user.Id].Awards.Values;
         }
 
         private void ReadUsersFromFile()
@@ -113,6 +141,20 @@ namespace Epam.Task06.Users.DAL
                         user.Id = int.Parse(userName[0]);
                         user.Name = userName[1];
                         user.DateOfBirth = DateTime.Parse(userName[2]);
+
+                        int i = 4;
+
+                        while (i < userName.Length)
+                        {
+                            Award award = new Award
+                            {
+                                Id = int.Parse(userName[i]),
+                                Title = userName[i + 1],
+                            };
+
+                            user.Awards.Add(award.Id, award);
+                            i += 2;
+                        }
 
                         RepoUsers.Add(user.Id, user);
                     }

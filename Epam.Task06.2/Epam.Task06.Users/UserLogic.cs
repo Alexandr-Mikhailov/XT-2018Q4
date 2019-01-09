@@ -74,5 +74,23 @@ namespace Epam.Task06.Users.BLL
         {
             this.userdao.SaveUsersList();
         }
+
+        public bool AddAward(User user, Award award)
+        {
+            if (this.userdao.GetAllAwards(user).Contains(award))
+            {
+                return false;
+            }
+            else
+            {
+                this.userdao.AddAward(user, award);
+                return true;
+            }
+        }
+
+        public IEnumerable<Award> GetAllAwards(User user)
+        {
+            return this.userdao.GetAllAwards(user);
+        }
     }
 }

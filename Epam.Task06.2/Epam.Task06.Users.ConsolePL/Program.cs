@@ -44,23 +44,11 @@ namespace Epam.Task06.Users.ConsolePL
 
                     case "4":
                         {
-                            ShowAwards(userLogic);
-                            break;
-                        }
-
-                    case "5":
-                        {
-                            AddAwardToList(userLogic);
-                            break;
-                        }
-
-                    case "6":
-                        {
                             AddAwardToUser(userLogic);
                             break;
                         }
 
-                    case "7":
+                    case "5":
                         {
                             SaveUsers(userLogic);
                             break;
@@ -127,11 +115,9 @@ namespace Epam.Task06.Users.ConsolePL
             Console.WriteLine("Please type command");
             Console.WriteLine("1 - to add user");
             Console.WriteLine("2 - to delete user");
-            Console.WriteLine("3 - to show users with awards");
-            Console.WriteLine("4 - to show awards list");
-            Console.WriteLine("5 - to add award to awards list");
-            Console.WriteLine("6 - to add award to user");
-            Console.WriteLine("7 - to save user list to file");
+            Console.WriteLine("3 - to show users");
+            Console.WriteLine("4 - to add award to user");
+            Console.WriteLine("5 - to save user list to file");
             Console.WriteLine("q - to quit program");
         }
 
@@ -142,21 +128,64 @@ namespace Epam.Task06.Users.ConsolePL
             foreach (var user in userLogic.GetAll())
             {
                 Console.WriteLine(user);
+
+                if (userLogic.GetAllAwards(user).Count() == 0)
+                {
+                    Console.WriteLine("User has no awards");
+                }
+                else
+                {
+                    Console.WriteLine("User has award(s)");
+
+                    foreach (var award in userLogic.GetAllAwards(user))
+                    {
+                        Console.WriteLine($"{award.Id} {award.Title}");
+                    }
+                }
             }
 
             Console.WriteLine();
         }
 
-        private static void ShowAwards(IUserLogic userLogic)
-        {
-        }
-
-        private static void AddAwardToList(IUserLogic userLogic)
-        {
-        }
-
         private static void AddAwardToUser(IUserLogic userLogic)
         {
+            string input;
+
+            Console.WriteLine("input user Id to take award");
+            input = Console.ReadLine();
+
+            if (!int.TryParse(input, out int userId) || userId < 0)
+            {
+                Console.WriteLine("user Id is not correct");
+            }
+            else
+            {
+                Console.WriteLine("input Id of award");
+                input = Console.ReadLine();
+
+                if (!int.TryParse(input, out int awardId) || awardId < 0)
+                {
+                    Console.WriteLine("award Id is not correct");
+                }
+                else
+                {
+                    Console.WriteLine("input Title of award");
+                    input = Console.ReadLine();
+
+                    var user = new User
+                    {
+                        Id = userId,
+                    };
+
+                    var award = new Award
+                    {
+                        Id = awardId,
+                        Title = input,
+                    };
+
+                    userLogic.AddAward(user, award);
+                }
+            }
         }
 
         private static void SaveUsers(IUserLogic userLogic)

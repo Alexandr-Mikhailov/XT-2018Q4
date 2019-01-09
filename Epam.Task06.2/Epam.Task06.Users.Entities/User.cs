@@ -22,7 +22,7 @@ namespace Epam.Task06.Users.Entities
             }
         }
 
-        public Dictionary<int, Award> Awards { get; set; }
+        public Dictionary<int, Award> Awards = new Dictionary<int, Award>();
 
         public override string ToString()
         {
