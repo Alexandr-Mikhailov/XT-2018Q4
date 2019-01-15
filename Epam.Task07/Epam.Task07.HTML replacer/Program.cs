@@ -31,25 +31,9 @@ namespace Epam.Task07.HTML_replacer
                     break;
                 }
 
-                var regex = new Regex(regString);
+                string result = Regex.Replace(input, regString, SYMBOL);
 
-                var match = regex.Matches(input);
-
-                if (match.Count == 0)
-                {
-                    Console.WriteLine("Text is not contains HTML tags");
-                }
-                else
-                {
-                    string temp = input;
-
-                    foreach (var item in match)
-                    {
-                        temp = temp.Replace(item.ToString(), SYMBOL);
-                    }
-
-                    Console.WriteLine(temp);
-                }
+                Console.WriteLine(result);
             }
             while (true);
         }
