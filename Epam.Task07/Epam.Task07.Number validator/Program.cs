@@ -18,7 +18,7 @@ namespace Epam.Task07.Number_validator
         {
             string input;
             string regNormalNotation = @"^(-?[0-9]+(\.[0-9]+)?)$";
-            string regScienceNotation = @"^(-?[0-9]{1}(\.[0-9]+)?[Ee]-?[0-9]+)$";
+            string regScienceNotation = @"^(((-?[0-9]{1}(\.[0-9]+))|(-?[0-9]+))[Ee]-?[0-9]+)$";
 
             do
             {
