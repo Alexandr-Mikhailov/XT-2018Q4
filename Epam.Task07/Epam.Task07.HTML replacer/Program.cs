@@ -9,6 +9,8 @@ namespace Epam.Task07.HTML_replacer
 {
     public class Program
     {
+        public const string SYMBOL = "_";
+
         public static void Main(string[] args)
         {
             Run();
@@ -23,7 +25,7 @@ namespace Epam.Task07.HTML_replacer
             {
                 Console.WriteLine("Input text to analyze or q to exit");
                 input = Console.ReadLine();
-                input = @"<b>Это</b> текст <i>с</i> <font >HTML</font> кодами";
+                
                 if (input == "q" || input == "Q")
                 {
                     break;
@@ -33,14 +35,21 @@ namespace Epam.Task07.HTML_replacer
 
                 var match = regex.Matches(input);
 
-                //if (match.Success)
-                //{
-                //    Console.WriteLine($"The text \"{input}\" contains date");
-                //}
-                //else
-                //{
-                //    Console.WriteLine($"The text \"{input}\" is not contains date");
-                //}
+                if (match.Count == 0)
+                {
+                    Console.WriteLine("Text is not contains HTML tags");
+                }
+                else
+                {
+                    string temp = input;
+
+                    foreach (var item in match)
+                    {
+                        temp = temp.Replace(item.ToString(), SYMBOL);
+                    }
+
+                    Console.WriteLine(temp);
+                }
             }
             while (true);
         }
