@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task07.HTML replacer",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task07.Number validator", "Epam.Task07.Number validator\Epam.Task07.Number validator.csproj", "{A11B9938-5D83-4471-8AE2-26BAF16A65A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task07.Email finder", "Epam.Task07.Email finder\Epam.Task07.Email finder.csproj", "{D9E408A1-6CB9-43B1-96AE-B7FE8F2BC924}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{A11B9938-5D83-4471-8AE2-26BAF16A65A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A11B9938-5D83-4471-8AE2-26BAF16A65A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A11B9938-5D83-4471-8AE2-26BAF16A65A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9E408A1-6CB9-43B1-96AE-B7FE8F2BC924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9E408A1-6CB9-43B1-96AE-B7FE8F2BC924}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9E408A1-6CB9-43B1-96AE-B7FE8F2BC924}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9E408A1-6CB9-43B1-96AE-B7FE8F2BC924}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
