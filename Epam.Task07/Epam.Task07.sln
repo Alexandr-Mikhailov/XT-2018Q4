@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task07.Date existance", "Epam.Task07.Date existance\Epam.Task07.Date existance.csproj", "{C4468F39-9476-4A9E-B881-50B4CD4178F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task07.Time counter", "Epam.Task07.Time counter\Epam.Task07.Time counter.csproj", "{74678471-F29B-40A7-8CC7-578CB24A20C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task07.HTML replacer", "Epam.Task07.HTML replacer\Epam.Task07.HTML replacer.csproj", "{09BBCB58-D5F4-4283-BD31-6992CE67F39E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{C4468F39-9476-4A9E-B881-50B4CD4178F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4468F39-9476-4A9E-B881-50B4CD4178F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4468F39-9476-4A9E-B881-50B4CD4178F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74678471-F29B-40A7-8CC7-578CB24A20C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74678471-F29B-40A7-8CC7-578CB24A20C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74678471-F29B-40A7-8CC7-578CB24A20C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74678471-F29B-40A7-8CC7-578CB24A20C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09BBCB58-D5F4-4283-BD31-6992CE67F39E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09BBCB58-D5F4-4283-BD31-6992CE67F39E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09BBCB58-D5F4-4283-BD31-6992CE67F39E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09BBCB58-D5F4-4283-BD31-6992CE67F39E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
