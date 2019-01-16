@@ -29,7 +29,7 @@ namespace Epam.Task07.Email_finder
                     break;
                 }
 
-                var regex = new Regex(regString);
+                var regex = new Regex(regString, RegexOptions.IgnoreCase);
 
                 var match = regex.Matches(input);
 
