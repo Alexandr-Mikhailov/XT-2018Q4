@@ -17,7 +17,7 @@ namespace Epam.Task07.Date_existance
         public static void Run()
         {
             string input;
-            string regString = @"(([0-2]\d-(0[1-9]|1[012]))|(30-(0[13-9]|1[012]))|(31-(0[13578]|1[02])))-[0-9]{4}";
+            string regString = @"\b(([0-2]\d-(0[1-9]|1[012]))|(30-(0[13-9]|1[012]))|(31-(0[13578]|1[02])))-[0-9]{4}\b";
 
             do
             {
