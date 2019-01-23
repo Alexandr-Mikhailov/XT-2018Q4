@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Three column block</title>
+  <style>
+    body {
+        font-family: Arial;
+        font-size: 12px ;
+        background: #ffffff;
+    }
+    input[type=radio] {
+        display: none;
+        margin: 0px;
+        padding: 0px;
+    }
+    input[type=radio] + span {
+        display: inline-block;
+        position: relative;
+        margin: 0px;
+        padding: 0px;
+        width: 98px;
+        height: 30px;
+
+        color: #000000;
+        background-color: #bfbfbf;
+        text-align: center;
+        line-height: 28px;
+        text-decoration: none;
+        background-image: linear-gradient(to bottom, #dfdfdf, #bfbfbf, #dfdfdf);
+    }
+    input[type=radio]:checked + span {
+        color: #ffffff;
+        background-color: #64c51d;
+        background-image:linear-gradient(to bottom, #b2e28f, #64c51d, #b2e28f);
+    }
+    label {
+        margin: 0px;
+        padding: 0px;
+        background-color: #ffffff;
+    }
+    label:not(:first-child) > input[type=radio] + span:before {
+        content: '';
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        border-top: 15px solid transparent;
+        border-right: none;
+        border-bottom: 15px solid transparent;
+        border-left: 5px solid #ffffff;
+    }
+    label:not(:last-child) > input[type=radio] + span:after {
+        content: '';
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        border-top: 15px solid #ffffff;
+        border-right: none;
+        border-bottom: 15px solid #ffffff;
+        border-left: 5px solid transparent;
+    }
+  </style>
+ </head>
+ <body>
+    <form name="steps" id="steps">
+        <label>
+            <input type="radio" name="step"/>
+            <span>Шаг 1</span>
+        </label>
+        <label>
+            <input type="radio" name="step" checked/>
+            <span>Шаг 2</span>
+        </label>
+        <label>
+            <input type="radio" name="step"/>
+            <span>Шаг 3</span>
+        </label>
+        <label>
+            <input type="radio" name="step"/>
+            <span>Шаг 4</span>
+        </label>
+    </form>
+ </body>
+</html>

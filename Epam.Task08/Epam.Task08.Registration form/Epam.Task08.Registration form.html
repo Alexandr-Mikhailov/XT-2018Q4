@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Registration form</title>
+  <style>
+      
+      form {
+          position: relative;
+          background-color: #0690cf;
+          
+          width: 400px;
+          height: 275px;
+          border: 3px solid #0075b2;
+      }
+      header {
+        padding: 20px 0 11px 20px;
+
+        font-family: Arial;
+        font-size: 24px;
+        text-align: left;
+        color: #ffffff;
+        
+        border-bottom: 1px solid #ffffff;
+      }
+      .common {
+        margin: 30px 20px;
+      }
+      .email {
+        font-family: Arial;
+        font-size: 16px;
+        color: #ffffff;
+        background-color: #0690cf;
+      }
+      .password,
+      .confirm {
+        width: 150px;
+        margin-top:10px;
+        margin-right: 16px;
+        display: inline-block;
+
+        font-family: Arial;
+        font-size: 16px;
+        color: #ffffff;
+        background-color: #0690cf;
+      }
+      input[type="password"] {
+        margin-top: 3px;
+        width: 146px;
+        height: 18px;
+        border: 1px solid #abadb3;
+      }
+      input[type="email"] {
+        margin-top: 3px;
+        width: 316px;
+        height: 18px;
+        border: 1px solid #abadb3;
+      }  
+      a.button_submit {
+        display: inline-block;
+        width: 82px;
+        height: 26px;
+        margin-top: 32px;
+        
+        font-family: Arial;
+        font-size: 13px;
+        text-align: center;
+        line-height: 26px;
+        color: #000000;
+        text-decoration: none;
+        background: #ffdf7f;
+      }
+      a.button_submit:hover {
+        background: #ffcc33;
+      }
+      a.button_submit:active {
+        background: #ffcc33;
+        box-shadow: inset 0 0 0 #000000;
+      }
+  </style>
+ </head>
+ <body>
+    <form>
+        <header>Регистрация</header>
+        <div class="common">
+            <div class="email">
+                <label for="mail">E-mail</label>
+                <input type="email" name="mail">
+            </div>
+            <div class="password">
+                <label for="paswd">Пароль</label>
+                <input type="password" name="paswd">
+            </div>
+            <div class="confirm">
+                <label for="pasword_repeat">Ещё раз</label>
+                <input type="password" name="pasword_repeat">
+            </div>
+            <a href="#" class="button_submit">Отправить</a>
+        </div>
+    </form>
+  </body>
+</html>
