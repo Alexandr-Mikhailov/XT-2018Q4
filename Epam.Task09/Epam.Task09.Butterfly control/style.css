@@ -1,0 +1,45 @@
+body {
+    font-family: Arial;
+      font-size: 16px;
+    }
+    
+    .marked {
+    background-color: #a3c8f5;
+    }
+    p {
+       font-family: Arial;
+      font-size: 16px;
+      color: #000000;
+    }
+    
+    Button
+    {
+        background-color: #d4d0c8;
+        width: 35px;
+        height:25px;
+    }
+    
+    table {
+      text-align: center;
+         border: solid #000000 2px;
+         width: 30%;
+         background-color:#ffffff;
+    }
+    
+    td {
+      
+        border: solid #000000 2px;
+    vertical-align: top;
+    width: 40%;
+    }
+    
+    .CenterTD {
+        width: 20%;
+    }
+    
+    ul {
+      text-align: left;
+      margin-left: -32px;
+         list-style-type: none;
+         position: relative;
+    }
