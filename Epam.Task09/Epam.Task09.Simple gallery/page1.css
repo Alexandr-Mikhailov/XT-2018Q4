@@ -1,0 +1,30 @@
+.menu {
+    position: relative;
+    width: 220px;
+    box-shadow: 5px 5px #880000;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    padding-left: 2px;
+    padding-right: 2 px;
+    background: #f9e497;
+    line-height: 1;
+  }
+  ul {
+    list-style-type: none;
+    margin-top: 10px;
+    margin-left: -32px;
+    width: 200px;
+    font-size: 16px;
+    color: #880000;
+  }
+  ul li {
+    margin-bottom: -10px;
+    line-height: 1.25;
+  }
+  .buttons {
+    position: relative;
+    padding-top: 10px;
+  }
+  .whole {
+    background-color: #ffffff;
+}
