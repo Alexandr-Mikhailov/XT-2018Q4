@@ -4,8 +4,7 @@
   <meta charset="utf-8">
   <title>Page 1</title>
   <link href="page1.css" rel="stylesheet" />
-  <script src="Simple gallery.js"></script>
-
+  
  </head>
  <body>
 <div class="whole">
@@ -29,15 +28,14 @@
 
      <div class="buttons">
 
-     <button id="reset" onclick="StopProgress();Progress('page2.html');">Reset countdown</button>
-     <button id="pause" onclick="Pause('page2.html');">Pause</button>
+     <button id="pause">Pause</button>
 
      <p> Time remain</p> <p id="LeftTime">  </p> <p>seconds </p>
-
-     <script>
-         pr = Progress("page2.html");
-     </script>
      </div>
     </div>
+    <script src="Simple gallery.js"></script>
+    <script>
+        count=StartCountdown();
+    </script>
  </body>
 </html>

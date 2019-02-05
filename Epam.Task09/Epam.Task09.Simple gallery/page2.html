@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <title>Page 2</title>
   <link href="page2.css" rel="stylesheet" />
-  <script src="Simple gallery.js"></script>
 
  </head>
  <body>
@@ -17,9 +16,14 @@
          </div>
          <div class="buttons">
              <button id="previous">Previous</button>
-             <button id="reset">Reset countdown</button>
              <button id="pause">Pause</button>
+
+             <p> Time remain</p> <p id="LeftTime">  </p> <p>seconds </p>
          </div>          
      </div>
+     <script src="Simple gallery.js"></script>
+     <script>
+            count=StartCountdown();
+     </script>
  </body>
 </html>
